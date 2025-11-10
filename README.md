@@ -5,11 +5,11 @@
 - **Número de grupo:** 3
 
 - **Integrantes:**
-- Boris Carrasco
-- Cristian Cárdenas
-- Nelson Espinoza
-- Franco Garrido
-- Matias Guzman
+  - Boris Carrasco
+  - Cristian Cárdenas
+  - Nelson Espinoza
+  - Franco Garrido
+  - Matias Guzman
 
 ---
 
