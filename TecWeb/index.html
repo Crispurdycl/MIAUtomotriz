@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/main.css">
+  <title>Login — MIAUtomotriz</title>
+</head>
+<body>
+
+<header>
+  <div class="sitebar">
+    <div class="logo"><span class="dot"></span> <span>MIAUtomotriz</span></div>
+  </div>
+</header>
+
+  <main>
+    <section class="container hero" aria-labelledby="titulo-login">
+      <h1 id="titulo-login">Ingreso a la plataforma</h1>
+      <p class="small">Use un correo válido y su clave. </p>
+      <article class="card" aria-labelledby="form-login">
+        <h2 id="form-login">Formulario de autenticación</h2>
+        <form action="dashboard.html" method="get">
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="nombre@dominio.cl" autocomplete="username">
+          </div>
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required placeholder="••••••••" autocomplete="current-password">
+          </div>
+          <div class="field inline">
+            <input type="checkbox" id="recordarme" name="recordarme">
+            <label for="recordarme">Recordarme en este equipo</label>
+          </div>
+          <div class="field">
+            <label for="rol">Rol</label>
+            <select id="rol" name="rol" required>
+              <option value="">Seleccione…</option>
+              <option>Administrador</option>
+              <option>Operador</option>
+              <option>Analista</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="comentarios">Comentarios (opcional)</label>
+            <textarea id="comentarios" name="comentarios" placeholder="Algo que debamos saber…"></textarea>
+          </div>
+          <div class="controls">
+            <button type="submit" class="btn success">Ingresar</button>
+            <!-- <a class="btn secondary" href="formulario.html">¿No tienes acceso? Solicítalo</a> -->
+          </div>
+        </form>
+      </article>
+    </section>
+  </main>
+
+<footer>
+  <div class="container small">
+    <p>MIAUtomotriz</p>
+    <p>© 2025 — Universidad de los Lagos.</p>
+  </div>
+</footer>
+
+</body>
+</html>

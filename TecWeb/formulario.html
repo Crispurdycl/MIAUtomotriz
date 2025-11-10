@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/main.css">
+  <title>Formulario de ingreso — MIAUtomotriz</title>
+</head>
+<body>
+
+<header>
+  <div class="sitebar">
+    <div class="logo"><span class="dot"></span> <span>MIAUtomotriz</span></div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="clientes.html">Lista de clientes</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section class="container" aria-labelledby="titulo-form">
+      <h1 id="titulo-form">Ingreso de cliente</h1>
+      <form action="clientes.html" method="get">
+        <fieldset class="card">
+          <legend>Datos básicos</legend>
+          <div class="field">
+            <label for="rut">RUT</label>
+            <input type="text" id="rut" name="rut" placeholder="12.345.678-9" required>
+          </div>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="field">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" required>
+          </div>
+          <div class="field">
+            <label for="email2">Correo</label>
+            <input type="email" id="email2" name="email2" placeholder="persona@dominio.cl">
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678">
+          </div>
+          <div class="field">
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="nacimiento" name="nacimiento">
+          </div>
+        </fieldset>
+        <fieldset class="card">
+          <legend>Dirección</legend>
+          <div class="field">
+            <label for="direccion">Calle y número</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Av. Ejemplo 1234">
+          </div>
+          <div class="field">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad">
+          </div>
+          <div class="field">
+            <label for="region">Región</label>
+            <select id="region" name="region">
+              <option>Región Metropolitana</option>
+              <option>Valparaíso</option>
+              <option>Biobío</option>
+              <option>Los Lagos</option>
+              <option>Magallanes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="notas">Notas adicionales</label>
+            <textarea id="notas" name="notas" placeholder="Observaciones del cliente…"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="controls">
+          <button type="submit" class="btn success">Ingresar</button>
+          <a class="btn secondary" href="dashboard.html">Cancelar</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+<footer>
+  <div class="container small">
+    <p>MIAUtomotriz</p>
+    <p>© 2025 — Universidad de los Lagos.</p>
+  </div>
+</footer>
+</body>
+</html>

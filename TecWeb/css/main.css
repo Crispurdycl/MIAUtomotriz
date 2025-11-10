@@ -1,0 +1,271 @@
+/* ---------------------------------------------------
+requisitos a considerar:
+- Hoja externa enlazada                              Listo      se hace referencia en el HTML
+- Colores y tipografía consistentes                  Listo      definidos en body, header, footer
+- Botones estilizados                                Listo      clase .btn y .btn.primary
+- Formularios y tablas legibles                      Listo      clases para form, input, table, th, td
+- Menú principal con lista                           Listo      clases para nav, ul, li, a
+- Box Model (margin, padding, border)                Listo      utilizado en varios elementos
+- Interactividad con :hover y :focus-visible         Listo      definido en enlaces, botones, inputs
+--------------------------------------------------- */
+
+
+/* -------------------- REINICIO BÁSICO -------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* padding + border dentro del ancho total */
+}
+
+html, body {
+    height: 100%;    /* Ocupa toda la altura de la pantalla */
+    margin: 0;       /* Quita márgenes por defecto del navegador */
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #14213D;           /* Texto principal: azul oscuro */
+    background-color: #E5E5E5; /* Fondo general: gris claro */
+    line-height: 1.5;         /* Espacio entre líneas para legibilidad */
+}
+
+img, video {
+    max-width: 100%; /* No se salen del contenedor */
+    height: auto;    /* Mantienen proporción */
+    display: block;  /* Evita espacio extra debajo de la imagen */
+}
+
+
+/* -------------------- ENLACES -------------------- */
+a {
+    color: #FCA311;          /* Color naranja acento para links */
+    text-decoration: none;    /* Quita subrayado por defecto */
+}
+
+a:hover {
+    text-decoration: underline; /* Subraya al pasar mouse */
+}
+
+a:focus-visible {
+    outline: 2px solid #14213D; /* Borde azul oscuro al enfocar */
+    outline-offset: 2px;
+}
+
+
+/* -------------------- CONTENEDOR PRINCIPAL -------------------- */
+.container {
+    max-width: 1000px;       /* Ancho máximo del contenido */
+    margin: 0 auto;          /* Centrado horizontal */
+    padding: 0 16px;         /* Espacio interno a los lados */
+}
+
+main {
+    padding: 24px 0 40px;    /* Espacio arriba y abajo del contenido principal */
+}
+
+h1, h2, h3 {
+    margin: 0 0 12px;        /* Espacio debajo de los títulos */
+    line-height: 1.2;        /* Separación entre líneas del título */
+    color: #000000;          /* Títulos en negro */
+}
+
+p {
+    margin: 0 0 12px;        /* Espacio debajo de cada párrafo */
+}
+
+
+/* -------------------- NAVEGACIÓN -------------------- */
+header {
+    border-bottom: 1px solid #E5E5E5; /* Línea inferior del header */
+    background-color: #14213D;        /* Fondo azul oscuro */
+    position: sticky;                  /* Header se queda pegado al hacer scroll */
+    top: 0;
+}
+
+.sitebar {
+    display: flex;                     /* Organiza elementos horizontalmente */
+    align-items: center;               /* Centra verticalmente */
+    justify-content: space-between;    /* Separa elementos a los lados */
+    gap: 12px;                         /* Espacio entre elementos */
+    padding: 10px 16px;                /* Espacio interno */
+}
+
+nav ul {
+    list-style: none;   /* Quita puntos de la lista */
+    margin: 0;          /* Quita margen por defecto */
+    padding: 0;         /* Quita padding por defecto */
+    display: flex;      /* Coloca enlaces en fila */
+    gap: 8px;           /* Espacio entre enlaces */
+    flex-wrap: wrap;    /* Saltan a siguiente línea si no caben */
+}
+
+nav a {
+    display: inline-block; /* Permite aplicar padding y background */
+    padding: 8px 10px;     /* Espacio interno de los enlaces */
+    border-radius: 6px;    /* Bordes redondeados */
+    color: #FFFFFF;        /* Texto blanco */
+}
+
+nav a:hover {
+    background-color: #FCA311; /* Fondo naranja al pasar mouse */
+    color: #000000;            /* Texto negro para contraste */
+}
+
+nav a[aria-current="page"] {
+    background-color: #FCA311; /* Fondo naranja medio para página activa */
+    font-weight: 600;
+    color: #000000;
+}
+
+
+/* -------------------- BOTONES -------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 8px 12px;
+    border: 1px solid #14213D;    /* Borde azul oscuro */
+    border-radius: 6px;
+
+    background-color: #FCA311;    /* Fondo naranja */
+    color: #000000;               /* Texto negro */
+
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+.btn:hover {
+    background-color: #e59500; /* Naranja más oscuro al pasar mouse */
+}
+
+.btn:focus-visible {
+    outline: 2px solid #14213D; /* Borde azul oscuro al enfocar con teclado */
+    outline-offset: 2px;
+}
+
+.btn.primary {
+    background-color: #14213D; /* Azul oscuro para botón principal */
+    border-color: #14213D;
+    color: #FFFFFF;
+}
+
+.btn.primary:hover {
+    background-color: #000000; /* Negro al pasar mouse */
+}
+
+
+/* -------------------- FORMULARIOS -------------------- */
+form {
+    display: grid;
+    gap: 12px;   /* Espacio entre campos */
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.field {
+    display: grid;
+    gap: 6px;  /* Espacio entre label y campo */
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+
+    border: 1px solid #14213D; /* Borde azul oscuro */
+    border-radius: 6px;
+
+    background-color: #FFFFFF; /* Fondo blanco */
+    color: #000000;             /* Texto negro */
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #FCA311; /* Borde naranja al pasar mouse */
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #FCA311; /* Borde naranja al enfocar */
+    outline-offset: 2px;
+    border-color: #FCA311;
+}
+
+
+/* -------------------- TABLAS -------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF; /* Fondo blanco */
+    border: 1px solid #E5E5E5; /* Borde gris claro */
+}
+
+caption {
+    text-align: left;
+    padding: 8px 0;
+    color: #14213D;   /* Texto azul oscuro */
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #E5E5E5; /* Separador gris claro */
+    text-align: left;
+}
+
+thead th {
+    background-color: #14213D; /* Encabezado azul oscuro */
+    color: #FFFFFF;            /* Texto blanco */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #E5E5E5; /* Filas alternas gris claro */
+}
+
+tbody tr:hover {
+    background-color: #FCA311; /* Resalta fila naranja */
+    color: #000000;
+}
+
+
+/* -------------------- PIE DE PÁGINA -------------------- */
+footer {
+    border-top: 1px solid #E5E5E5;
+    background-color: #14213D;
+}
+
+footer .container {
+    padding: 16px;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+}

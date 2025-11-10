@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema principal -->
+    <style name="Theme.MiauTaller" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/miau_primary</item>
+        <item name="colorPrimaryDark">@color/miau_primary_dark</item>
+        <item name="colorAccent">@color/miau_accent</item>
+        <item name="android:windowBackground">@color/miau_background</item>
+    </style>
+
+    <style name="ThemeOverlay.MiauTaller.Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+</resources>
