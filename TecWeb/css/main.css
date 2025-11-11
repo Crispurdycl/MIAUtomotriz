@@ -14,8 +14,7 @@ requisitos a considerar:
 *,
 *::before,
 *::after {
-    box-sizing:
-    border-box; /* padding + border dentro del ancho total */
+    box-sizing: border-box; /* padding + border dentro del ancho total */
 }
 
 html, body {
@@ -26,7 +25,7 @@ html, body {
 body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     color: #14213D;           /* Texto principal: azul oscuro */
-    background-color: #E5E5E5; /* Fondo general: blanco */
+    background-color: #E5E5E5; /* Fondo general: gris claro */
     line-height: 1.5;         /* Espacio entre líneas para legibilidad */
 }
 
@@ -39,7 +38,7 @@ img, video {
 
 /* -------------------- ENLACES -------------------- */
 a {
-    color: #FCA311;          /* Color naranja acento para links */
+    color: #103686;          /* Color naranja acento para links */
     text-decoration: none;    /* Quita subrayado por defecto */
 }
 
@@ -76,6 +75,9 @@ p {
 
 
 /* -------------------- NAVEGACIÓN -------------------- */
+.titulo {
+    color: #ffffff;
+}
 header {
     border-bottom: 1px solid #E5E5E5; /* Línea inferior del header */
     background-color: #14213D;        /* Fondo azul oscuro */
@@ -117,7 +119,6 @@ nav a[aria-current="page"] {
     font-weight: 600;
     color: #000000;
 }
-
 
 /* -------------------- BOTONES -------------------- */
 .btn {

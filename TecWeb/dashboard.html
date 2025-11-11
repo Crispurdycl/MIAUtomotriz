@@ -10,7 +10,7 @@
   
 <header>
   <div class="sitebar">
-    <div class="logo"><span class="dot"></span> <span>MIAUtomotriz</span></div>
+    <div class="logo"><span class="dot"></span> <span class="titulo">MIAUtomotriz</span></div>
     <nav>
       <a href="formulario.html">Formulario de ingreso</a>
       <a href="clientes.html">Lista de clientes</a>
@@ -21,12 +21,23 @@
   <main>
     <section class="container" aria-labelledby="resumen">
       <h1 id="resumen">Panel de control</h1>
-      <div class="kpis">
-        <div class="kpi"><div class="value">152</div><div class="label">Clientes pendientes</div></div>
-        <div class="kpi"><div class="value">18</div><div class="label">Nuevos este mes</div></div>
-        <div class="kpi"><div class="value">97%</div><div class="label">Satisfacción</div></div>
-        <div class="kpi"><div class="value">4.2d</div><div class="label">Tiempo medio de atención</div></div>
-      </div>
+      <table class="tabla-datos" aria-describedby="titulo-resumen">
+          <caption>Resumen</caption>
+          <thead>
+            <tr>
+              <th scope="col">Clientes pendientes</th>
+              <th scope="col">Nuevos este mes</th>
+              <th scope="col">Tiempo medio de atención</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>152</td>
+              <td>18</td>
+              <td>4.2d</td>
+            </tr>
+          </tbody>
+      </table>
     </section>
 
     <section class="container grid cards" aria-labelledby="accesos">
