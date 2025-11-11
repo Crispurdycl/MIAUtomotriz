@@ -32,10 +32,6 @@ import com.cabroninja.tallermiaumovil.data.OrdenRepository;
 //    - Botones de navegación rápida y menú lateral (drawer).
 //    - Gestiona la navegación a PersonasActivity, VehiculosActivity,
 //      OrdenesActivity y ManageClientesActivity.
-//
-//    Extiende AppCompatActivity para integrar el ciclo de vida y compat
-//    con Material/Toolbar. Implementa OnNavigationItemSelectedListener
-//    para manejar los clics del menú lateral.
 // ======================================================================
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -146,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private OrdenRepository ordenRepo;
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado anterior de la Activity
     //        si el sistema la recreó (suele venir null en un arranque
@@ -263,9 +259,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onResume
+    // == Método: onResume
     //    Parámetros:
-    //      - (sin parámetros): metodo de ciclo de vida llamado cuando la
+    //      - (sin parámetros): método de ciclo de vida llamado cuando la
     //        Activity vuelve al primer plano.
     //
     //    Descripción:
@@ -284,7 +280,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onNavigationItemSelected
+    // == Método: onNavigationItemSelected
     //    Parámetros:
     //      - item (MenuItem): elemento del menú lateral que el usuario
     //        seleccionó. Contiene el id del recurso (R.id.*) para
@@ -324,7 +320,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: refreshCounters
+    // == Método: refreshCounters
     //    Parámetros:
     //      - (sin parámetros).
     //

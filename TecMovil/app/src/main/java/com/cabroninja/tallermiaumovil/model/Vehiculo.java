@@ -12,12 +12,6 @@ package com.cabroninja.tallermiaumovil.model;
 //      * V_COLOR      (TEXT)
 //      * V_MODELO     (TEXT)
 //      * V_RUN_DUENO  (INTEGER NULL)            ← FK opcional a T_PERSONA.C_RUN
-//
-//    Notas de diseño:
-//      - Campos públicos para simplicidad (POJO). En proyectos grandes
-//        suele preferirse encapsular (private + getters/setters).
-//      - runDueno puede ser null: permite registrar el vehículo sin
-//        dueño asignado, o eliminar temporalmente la relación.
 // ======================================================================
 public class Vehiculo {
 
@@ -25,9 +19,6 @@ public class Vehiculo {
     // == Atributo: patente
     //    Tipo: String
     //    Rol: Identificador único (PK) del vehículo. Ej.: "ABCD12".
-    //    Consideraciones:
-    //      - Debe ser único en T_VEHICULO.
-    //      - Punto de unión con órdenes y otras tablas por patente.
     // ------------------------------------------------------------------
     public String patente;
 
@@ -50,8 +41,6 @@ public class Vehiculo {
     //    Tipo: Integer (nullable)
     //    Rol: RUN del dueño del vehículo; puede ser null si no está
     //         asignado o se desconoce.
-    //    Integridad referencial:
-    //      - Cuando no es null, debería existir en T_PERSONA.C_RUN.
     // ------------------------------------------------------------------
     public Integer runDueno; // puede ser null
 
@@ -62,10 +51,6 @@ public class Vehiculo {
     //      - color   (String) : color declarativo.
     //      - modelo  (String) : modelo/marca del vehículo.
     //      - runDueno (Integer) : RUN del dueño o null si no aplica.
-    //    Descripción:
-    //      - Inicializa el POJO con los valores indicados. No valida
-    //        unicidad o formato de patente; se delega a la capa de datos
-    //        o a la UI la responsabilidad de validar y persistir.
     //    Retorno:
     //      - (constructor) instancia lista para ser mapeada a/desde SQLite.
     // ------------------------------------------------------------------
@@ -77,7 +62,7 @@ public class Vehiculo {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: toString
+    // == Método: toString
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción:

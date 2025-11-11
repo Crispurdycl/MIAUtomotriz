@@ -19,18 +19,6 @@ import java.util.Locale;
 public class OrdenAdapter extends RecyclerView.Adapter<OrdenAdapter.VH> {
 
     // ------------------------------------------------------------------
-    // == Interface: OnLong
-    //    Rol:
-    //      - Contrato para manejar una pulsación larga (long click)
-    //        sobre un item de la lista.
-//      - La Activity/Fragment decide qué hacer (confirmación de borrado,
-//        abrir detalle, etc.).
-    //    Método:
-    //      - void onLong(OrdenTrabajo o): OT asociada al item presionado.
-    // ------------------------------------------------------------------
-    public interface OnLong { void onLong(OrdenTrabajo o); }
-
-    // ------------------------------------------------------------------
     // == Atributo: data
     //    Tipo: List<OrdenTrabajo>
     //    Rol : Fuente de datos actual del adapter; se reemplaza completa
@@ -38,13 +26,6 @@ public class OrdenAdapter extends RecyclerView.Adapter<OrdenAdapter.VH> {
     //    Nota: Comienza vacía para evitar null checks.
     // ------------------------------------------------------------------
     private final List<OrdenTrabajo> data = new ArrayList<>();
-
-    // ------------------------------------------------------------------
-    // == Atributo: onLong
-    //    Tipo: OnLong
-    //    Rol : Callback invocado cuando el usuario mantiene pulsado un item.
-    // ------------------------------------------------------------------
-    private final OnLong onLong;
 
     // ------------------------------------------------------------------
     // == Constructor: OrdenAdapter
@@ -55,7 +36,7 @@ public class OrdenAdapter extends RecyclerView.Adapter<OrdenAdapter.VH> {
     //    Retorno:
     //      - (constructor) instancia lista para asignar al RecyclerView.
     // ------------------------------------------------------------------
-    public OrdenAdapter(OnLong onLong){ this.onLong = onLong; }
+    public OrdenAdapter(){}
 
     // ==================================================================
     // == Clase interna: VH (ViewHolder)
@@ -132,7 +113,6 @@ public class OrdenAdapter extends RecyclerView.Adapter<OrdenAdapter.VH> {
         OrdenTrabajo o = data.get(pos);
         String s = "OT " + o.numero + " — " + o.fecha + " — Total: $" + String.format(Locale.US, "%,.0f", o.total());
         h.linea.setText(s);
-        h.itemView.setOnLongClickListener(w -> { if (onLong != null) onLong.onLong(o); return true; });
     }
 
     // ------------------------------------------------------------------

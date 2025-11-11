@@ -13,13 +13,8 @@ package com.cabroninja.tallermiaumovil.model;
 //      * C_EMAIL     (TEXT UNIQUE NOT NULL)
 //      * C_NOMBRE    (TEXT NOT NULL)
 //      * C_APELLIDO  (TEXT NOT NULL)
-//      * C_PASSWORD  (TEXT NOT NULL)  ← almacenado en texto plano (demo)
+//      * C_PASSWORD  (TEXT NOT NULL)
 //      * C_TIPO      (TEXT NOT NULL CHECK IN ['cliente','trabajador'])
-//
-//    Nota de diseño:
-//      - Los campos son públicos para simplicidad (POJO). En sistemas
-//        más grandes se suele preferir encapsular (private + getters/setters)
-//        y validar en los puntos de entrada (constructores/validadores).
 // ======================================================================
 public class Persona {
 
@@ -28,9 +23,6 @@ public class Persona {
     //    Tipo: int
     //    Rol: Identificador único de la persona (usado como PK en la DB).
     //         En el contexto chileno, corresponde al RUN/RUT sin DV.
-    //    Consideraciones:
-    //      - Debe ser único en T_PERSONA.
-    //      - Se usa para updates/deletes dirigidos.
     // ------------------------------------------------------------------
     public int run;
 
@@ -38,9 +30,6 @@ public class Persona {
     // == Atributo: email
     //    Tipo: String
     //    Rol: Correo único de la persona. En la DB está marcado como UNIQUE.
-    //    Uso:
-    //      - Autenticación (login de "trabajador").
-    //      - Render de encabezados/identificación en la UI si no hay nombre.
     // ------------------------------------------------------------------
     public String email;
 
@@ -62,9 +51,6 @@ public class Persona {
     // == Atributo: password
     //    Tipo: String
     //    Rol: Contraseña en texto plano para el login de "trabajador".
-    //    Seguridad:
-    //      - En un producto real, esto debería almacenarse como hash con sal
-    //        (bcrypt/Argon2) y nunca en texto plano.
     // ------------------------------------------------------------------
     public String password;
 
@@ -72,10 +58,6 @@ public class Persona {
     // == Atributo: tipo
     //    Tipo: String ("cliente" | "trabajador")
     //    Rol: Clasifica el perfil. En DB está restringido por CHECK.
-    //    Uso:
-    //      - Filtros en listados (ej. contar solo clientes).
-    //      - Autorización en login (solo "trabajador" puede autenticarse).
-    // ------------------------------------------------------------------
     public String tipo; // "cliente" | "trabajador"
 
     // ------------------------------------------------------------------
@@ -87,10 +69,6 @@ public class Persona {
     //      - apellido (String) : apellido.
     //      - password (String) : contraseña (actualmente texto plano).
     //      - tipo (String)     : "cliente" o "trabajador".
-    //    Descripción:
-    //      - Inicializa el POJO con los valores indicados. No realiza
-    //        validaciones; se asume que los repositorios/UI garantizan
-    //        consistencia (unicidad, no-nulos, valores válidos).
     //    Retorno:
     //      - (constructor) instancia lista para ser mapeada a/desde SQLite.
     // ------------------------------------------------------------------
@@ -104,15 +82,9 @@ public class Persona {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: nombreCompleto
+    // == Método: nombreCompleto
     //    Parámetros:
     //      - (sin parámetros)
-    //    Descripción:
-    //      - Construye un nombre visible concatenando "nombre" y "apellido".
-    //      - Tolerante a null/empty: si apellido existe, antepone un espacio.
-    //        (Caso borde: si nombre es "", y hay apellido, devolverá " apellido"
-    //         con espacio inicial; en la práctica la UI suele tener nombre
-    //         no vacío. Si preocupa, se puede aplicar trim() donde se muestre).
     //    Retorno:
     //      - String: cadena con el nombre completo tal como se armó.
     // ------------------------------------------------------------------

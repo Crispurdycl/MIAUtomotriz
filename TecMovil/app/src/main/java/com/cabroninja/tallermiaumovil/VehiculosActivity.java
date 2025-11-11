@@ -50,24 +50,24 @@ public class VehiculosActivity extends AppCompatActivity {
     //    Tipo: int
     //    Rol : Filtro opcional. Valor > 0 indica que se deben listar
     //          solo los vehículos cuyo dueño (run_dueno) sea este RUN.
-//    Origen: extra de Intent con clave "run_cliente".
+    //    Origen: extra de Intent con clave "run_cliente".
     // ------------------------------------------------------------------
     private int runCliente = -1;
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado previo si el sistema
     //        recrea la Activity (no utilizado en este flujo).
     //    Descripción:
     //      - Infla el layout activity_vehiculos.
-//      - Configura el Toolbar con título y botón de retroceso.
-//      - Inicializa el repositorio de vehículos.
-//      - Lee el extra "run_cliente" (si no viene, queda en -1 y se listan todos).
-//      - Configura el RecyclerView + LayoutManager + Adapter.
-//      - Define el callback de tap: abre OrdenesActivity con la patente.
-//    Retorno:
-//      - void (callback del ciclo de vida).
+    //      - Configura el Toolbar con título y botón de retroceso.
+    //      - Inicializa el repositorio de vehículos.
+    //      - Lee el extra "run_cliente" (si no viene, queda en -1 y se listan todos).
+    //      - Configura el RecyclerView + LayoutManager + Adapter.
+    //      - Define el callback de tap: abre OrdenesActivity con la patente.
+    //    Retorno:
+    //      - void (callback del ciclo de vida).
     // ------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,8 +89,6 @@ public class VehiculosActivity extends AppCompatActivity {
         runCliente = getIntent().getIntExtra("run_cliente", -1);
 
         // ---- Lista y adaptador ----
-        // Nota: el id R.id.recyclerClientes debe existir en activity_vehiculos.
-        //       Idealmente estandarizar a R.id.recyclerVehiculos para mayor claridad.
         RecyclerView rv = findViewById(R.id.recyclerClientes);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
@@ -106,7 +104,7 @@ public class VehiculosActivity extends AppCompatActivity {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onResume
+    // == Método: onResume
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción:
@@ -122,7 +120,7 @@ public class VehiculosActivity extends AppCompatActivity {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: cargar
+    // == Método: cargar
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción:
@@ -136,9 +134,9 @@ public class VehiculosActivity extends AppCompatActivity {
     private void cargar() {
         List<Vehiculo> lista;
         if ((runCliente > 0)) {
-            lista = repo.listByRunDueno(runCliente);   // filtra por cliente
+            lista = repo.listByRunDueno(runCliente);
         } else {
-            lista = repo.listAll();                    // todos los vehículos
+            lista = repo.listAll();
         }
         adapter.submit(lista);
     }

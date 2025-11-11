@@ -12,19 +12,19 @@ import java.util.List;
 // ======================================================================
 // == Clase: OrdenRepository
 // == Rol dentro de la app:
-//    - Capa de acceso a datos (DAO/Repositorio) para la entidad OrdenTrabajo.
+//    - Capa de acceso a datos para la entidad OrdenTrabajo.
 //    - Ejecuta operaciones CRUD y consultas de lectura sobre la tabla
 //      T_ORDEN en SQLite, utilizando TallerDbHelper para abrir la DB.
 //    - Entrega y recibe objetos de dominio (OrdenTrabajo) para aislar
 //      a la UI de los detalles SQL y del manejo de cursores.
 //
 //    Detalles del modelo (según constantes de TallerDbHelper):
-//      * O_ID          : clave primaria autoincremental (long).
-//      * O_NUMERO      : número de OT (String o código legible).
-//      * O_FECHA       : fecha en String (formato libre definido por la app).
-//      * O_VALOR_NETO  : monto neto (double).
-//      * O_IVA         : IVA asociado (double).
-//      * O_OBSERVACION : texto libre (String).
+//      * O_ID          : clave primaria autoincrementa.
+//      * O_NUMERO      : número de OT.
+//      * O_FECHA       : fecha en String .
+//      * O_VALOR_NETO  : monto neto .
+//      * O_IVA         : IVA asociado .
+//      * O_OBSERVACION : texto libre .
 //      * O_PATENTE     : FK a T_VEHICULO.V_PATENTE (String). Requiere
 //                        que exista la patente si las claves foráneas están activas.
 // ======================================================================
@@ -36,9 +36,6 @@ public class OrdenRepository {
     //    Propósito:
     //      - Gestiona la creación/configuración de la base de datos.
     //      - Provee conexiones de lectura/escritura por operación.
-    //    Nota:
-    //      - El patrón usado evita mantener una conexión global abierta;
-    //        cada metodo pide un SQLiteDatabase cuando lo necesita.
     // ------------------------------------------------------------------
     private final TallerDbHelper helper;
 
@@ -55,7 +52,7 @@ public class OrdenRepository {
     public OrdenRepository(Context ctx){ helper = new TallerDbHelper(ctx); }
 
     // ------------------------------------------------------------------
-    // == Metodo: insert
+    // == Método: insert
     //    Parámetros:
     //      - o (OrdenTrabajo): entidad con los campos de la OT a persistir.
     //        Espera:
@@ -87,7 +84,7 @@ public class OrdenRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: listAll
+    // == Método: listAll
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción detallada:
@@ -113,7 +110,7 @@ public class OrdenRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: listByPatente
+    // == Método: listByPatente
     //    Parámetros:
     //      - patente (String): identificador del vehículo (PK en T_VEHICULO)
     //        cuyas órdenes asociadas se desean consultar.
@@ -121,7 +118,7 @@ public class OrdenRepository {
     //      - Filtra T_ORDEN por O_PATENTE = ? y ordena por O_ID DESC.
     //      - Mapea cada fila a OrdenTrabajo y la agrega a la lista de salida.
     //    Retorno:
-    //      - List<OrdenTrabajo>: lista (posiblemente vacía) de OTs ligadas a la patente.
+    //      - List<OrdenTrabajo>: lista de OTs ligadas a la patente.
     // ------------------------------------------------------------------
     public List<OrdenTrabajo> listByPatente(String patente){
         List<OrdenTrabajo> out = new ArrayList<>();
@@ -140,7 +137,7 @@ public class OrdenRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: update
+    // == Método: update
     //    Parámetros:
     //      - o (OrdenTrabajo): entidad con O_ID existente y nuevos valores
     //        para actualizar (numero, fecha, valorNeto, iva, observacion, patente).
@@ -164,7 +161,7 @@ public class OrdenRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: count
+    // == Método: count
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción detallada:

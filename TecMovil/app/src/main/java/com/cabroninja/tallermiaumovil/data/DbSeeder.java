@@ -15,38 +15,30 @@ import com.cabroninja.tallermiaumovil.model.Persona;
 //      de ejemplo para poder usar la app inmediatamente en desarrollo.
 //    - Solo si la tabla PERSONA está vacía: crea trabajadores demo,
 //      clientes demo, sus vehículos y algunas órdenes de trabajo.
-//    - Pensado para ENTORNOS DE DESARROLLO/PRUEBA. En producción, lo
-//      normal es desactivar el seeding o sustituirlo por migraciones.
 // ======================================================================
 public class DbSeeder {
 
     // ------------------------------------------------------------------
-    // == Metodo: seedIfEmpty
+    // == Método: seedIfEmpty
     //    Modificador: static (se usa sin instanciar la clase)
     //    Parámetros:
     //      - ctx (Context): contexto Android necesario para abrir/crear
     //        la base de datos a través de TallerDbHelper.
     //    Descripción detallada:
     //      1) Revisa un "toggle" local ENABLE_SEED. Si está desactivado,
-    //         no hace nada (seguridad para producción).
+    //         no hace nada.
     //      2) Abre la DB en modo lectura y pregunta cuántas filas hay en
     //         PERSONA. Si hay al menos 1, asume que la DB ya está poblada
-    //         y retorna sin cambios (idempotencia).
+    //         y retorna sin cambios.
     //      3) Si no hay personas, instancia los repositorios y realiza
     //         inserciones mínimas: 2 trabajadores (login), 2 clientes,
     //         2 vehículos y 3 órdenes de trabajo de ejemplo.
     //    Retorno:
     //      - void (produce efectos persistiendo datos).
-    //    Notas:
-    //      - Sin transacciones explícitas: para seeds pequeños es suficiente.
-    //        Si se quisiera atomicidad total, se puede envolver las inserciones
-    //        en db.beginTransaction()/setTransactionSuccessful()/endTransaction().
-    //      - Los ids autoincrementales (O_ID) se dejan en 0 al construir el
-    //        modelo de OrdenTrabajo; el INSERT asignará el id real.
     // ------------------------------------------------------------------
     public static void seedIfEmpty(Context ctx){
-        // Toggle de seeding: desactiva en producción.
-        final boolean ENABLE_SEED = true; // pon en false para desactivar si no quieres poblar
+
+        final boolean ENABLE_SEED = true;
         if (!ENABLE_SEED) return;
 
         // 1) Si ya hay personas (cliente/trabajador), no hacemos nada

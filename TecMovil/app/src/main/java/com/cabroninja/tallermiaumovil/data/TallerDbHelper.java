@@ -20,7 +20,6 @@ public class TallerDbHelper extends SQLiteOpenHelper {
     // == Atributo: DB_NAME
     //    Tipo: String (constante)
     //    Rol: Nombre físico del archivo de base de datos.
-    //    Ubicación: /data/data/<paquete>/databases/DB_NAME
     // ------------------------------------------------------------------
     public static final String DB_NAME = "taller_miau3.db";
 
@@ -29,8 +28,6 @@ public class TallerDbHelper extends SQLiteOpenHelper {
     //    Tipo: int (constante)
     //    Rol: Versión del esquema. Si cambia, Android llamará a onUpgrade()
     //         (o onDowngrade) según corresponda.
-    //    Nota: se incrementa (“subido”) cuando se modifica el esquema
-    //          para forzar la migración.
     // ------------------------------------------------------------------
     private static final int DB_VERSION = 16;
 
@@ -192,7 +189,7 @@ public class TallerDbHelper extends SQLiteOpenHelper {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onConfigure
+    // == Método: onConfigure
     //    Parámetros:
     //      - db (SQLiteDatabase): conexión recién creada/abierta.
     //    Descripción:
@@ -209,7 +206,7 @@ public class TallerDbHelper extends SQLiteOpenHelper {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - db (SQLiteDatabase): conexión de escritura a una DB recién
     //        creada (aún sin tablas).
@@ -261,7 +258,7 @@ public class TallerDbHelper extends SQLiteOpenHelper {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onUpgrade
+    // == Método: onUpgrade
     //    Parámetros:
     //      - db (SQLiteDatabase): conexión a la DB existente.
     //      - oldV (int): versión actual instalada.

@@ -29,7 +29,7 @@ import androidx.appcompat.widget.Toolbar;
 public class EditClienteActivity extends AppCompatActivity {
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado previo si el sistema
     //        recrea la Activity tras ser destruida.

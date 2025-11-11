@@ -34,8 +34,6 @@ public class PersonasActivity extends AppCompatActivity {
     // == Atributo: rv
     //    Tipo: RecyclerView
     //    Rol : Contenedor de lista eficiente para renderizar los clientes.
-    //    Notas:
-    //      - Se configura con LinearLayoutManager (lista vertical).
     // ------------------------------------------------------------------
     private RecyclerView rv;
 
@@ -43,9 +41,6 @@ public class PersonasActivity extends AppCompatActivity {
     // == Atributo: adapter
     //    Tipo: PersonaAdapter
     //    Rol : Puente entre los datos (List<Persona>) y las celdas del RV.
-    //    Notas:
-    //      - Expone submit(List<Persona>) para refrescar el contenido.
-    //      - Recibe un callback "onClick(Persona)" para manejar taps.
     // ------------------------------------------------------------------
     private PersonaAdapter adapter;
 
@@ -57,7 +52,7 @@ public class PersonasActivity extends AppCompatActivity {
     private PersonaRepository repo;
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado previo (restauración).
     //    Descripción:
@@ -105,7 +100,7 @@ public class PersonasActivity extends AppCompatActivity {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onResume
+    // == Método: onResume
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción:
@@ -121,7 +116,7 @@ public class PersonasActivity extends AppCompatActivity {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: cargar
+    // == Método: cargar
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción:

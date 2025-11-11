@@ -15,7 +15,7 @@ import java.util.List;
 // ======================================================================
 // == Clase: PersonaRepository
 // == Rol dentro de la app:
-//    - Capa de acceso a datos (DAO/Repositorio) para la entidad Persona.
+//    - Capa de acceso a datos para la entidad Persona.
 //    - Centraliza operaciones CRUD, lecturas, conteos y autenticación
 //      sobre la tabla T_PERSONA en SQLite.
 //    - Aísla a la UI de los detalles SQL, usando TallerDbHelper para
@@ -37,10 +37,6 @@ public class PersonaRepository {
     //      - Puerta de entrada a SQLite (hereda de SQLiteOpenHelper).
     //      - Crea/actualiza el esquema (onCreate/onUpgrade) y provee
     //        instancias de lectura/escritura (getReadableDatabase / getWritableDatabase).
-    //    Notas:
-    //      - Se instancia con el Context de la app/Activity.
-    //      - No se guarda un SQLiteDatabase global; se solicita por metodo
-    //        para evitar fugas y favorecer el cierre oportuno de cursores.
     // ------------------------------------------------------------------
     private final TallerDbHelper helper;
 
@@ -62,7 +58,7 @@ public class PersonaRepository {
     // ============================== CRUD ===============================
 
     // ------------------------------------------------------------------
-    // == Metodo: insert
+    // == Método: insert
     //    Parámetros:
     //      - p (Persona): entidad con los campos poblados a insertar.
     //        Campos usados: run, email, nombre, apellido, password, tipo.
@@ -86,7 +82,7 @@ public class PersonaRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: update
+    // == Método: update
     //    Parámetros:
     //      - p (Persona): entidad con RUN existente y nuevos valores.
     //    Descripción:
@@ -109,7 +105,7 @@ public class PersonaRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: deleteByRun
+    // == Método: deleteByRun
     //    Parámetros:
     //      - run (int): identificador único primario de Persona.
     //    Descripción:
@@ -130,7 +126,7 @@ public class PersonaRepository {
     // ============================= LECTURAS ============================
 
     // ------------------------------------------------------------------
-    // == Metodo: getByRun
+    // == Método: getByRun
     //    Parámetros:
     //      - run (int): identificador primario a consultar.
     //    Descripción:
@@ -166,7 +162,7 @@ public class PersonaRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: listByTipo
+    // == Método: listByTipo
     //    Parámetros:
     //      - tipo (String): “cliente” o “trabajador”. Se asume válido
     //        según el CHECK de la tabla.
@@ -201,7 +197,7 @@ public class PersonaRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: countByTipo
+    // == Método: countByTipo
     //    Parámetros:
     //      - tipo (String): “cliente” o “trabajador”.
     //    Descripción:
@@ -222,7 +218,7 @@ public class PersonaRepository {
     // ====================== AUTENTICACIÓN (trabajador) =================
 
     // ------------------------------------------------------------------
-    // == Metodo: authenticateTrabajador
+    // == Método: authenticateTrabajador
     //    Parámetros:
     //      - email (String): correo ingresado por el usuario.
     //      - plainPassword (String): contraseña en texto plano tal como
@@ -237,10 +233,6 @@ public class PersonaRepository {
     //    Retorno:
     //      - String: nombre completo del trabajador autenticado; o null
     //        si las credenciales no son válidas o no existe el email/tipo.
-    //    Nota de seguridad:
-    //      - Actualmente compara contraseñas en texto plano. En producción
-    //        es recomendable usar hash con sal (p. ej., bcrypt/Argon2) y
-    //        comparar contra el hash persistido.
 // ------------------------------------------------------------------
     public String authenticateTrabajador(String email, String plainPassword) {
         try {

@@ -29,24 +29,24 @@ import com.cabroninja.tallermiaumovil.model.Persona;
 public class AddClienteActivity extends AppCompatActivity {
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado previo si el sistema
     //        recrea la Activity (no usado en este flujo).
     //    Descripción:
     //      - Infla el layout activity_add_cliente.
-//      - Configura un Toolbar con título y botón de retroceso.
-//      - Obtiene referencias a los EditText y al botón Guardar.
-//      - Crea un PersonaRepository para acceder a la DB.
-//      - En el click de Guardar:
-//           * Valida que RUN sea entero (NumberFormatException ⇒ error).
-//           * Valida que nombre, apellido y email no estén vacíos.
-//           * Construye Persona con password por defecto "123456"
-//             y tipo "cliente" (acorde al dominio).
-//           * Intenta insertar: si id != -1 ⇒ éxito, cierra pantalla;
-//             si id == -1 ⇒ puede haber colisión por PK/UNIQUE.
-//    Retorno:
-//      - void (callback del ciclo de vida).
+    //      - Configura un Toolbar con título y botón de retroceso.
+    //      - Obtiene referencias a los EditText y al botón Guardar.
+    //      - Crea un PersonaRepository para acceder a la DB.
+    //      - En el click de Guardar:
+    //           * Valida que RUN sea entero (NumberFormatException ⇒ error).
+    //           * Valida que nombre, apellido y email no estén vacíos.
+    //           * Construye Persona con password por defecto "123456"
+    //             y tipo "cliente" (acorde al dominio).
+    //           * Intenta insertar: si id != -1 ⇒ éxito, cierra pantalla;
+    //             si id == -1 ⇒ puede haber colisión por PK/UNIQUE.
+    //    Retorno:
+    //      - void (callback del ciclo de vida).
     // ------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {

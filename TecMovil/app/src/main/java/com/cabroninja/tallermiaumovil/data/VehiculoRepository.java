@@ -27,11 +27,6 @@ public class VehiculoRepository {
     //      - Gestiona la base de datos SQLite (creación/actualización).
     //      - Entrega instancias de lectura/escritura (getReadableDatabase /
     //        getWritableDatabase) para ejecutar operaciones SQL.
-    //    Notas:
-    //      - Este repositorio solicita la DB por operación; los cursores
-    //        se cierran con try-with-resources. El objeto SQLiteDatabase
-    //        devuelto por el helper lo administra el framework (no es
-    //        necesario cerrarlo manualmente en la mayoría de casos).
     // ------------------------------------------------------------------
     private final TallerDbHelper helper;
 
@@ -50,7 +45,7 @@ public class VehiculoRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: insert
+    // == Método: insert
     //    Parámetros:
     //      - v (Vehiculo): entidad a insertar. Se esperan:
     //          * patente (String) — PK de la tabla (no nulo).
@@ -83,7 +78,7 @@ public class VehiculoRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: listByRunDueno
+    // == Método: listByRunDueno
     //    Parámetros:
     //      - runDueno (int): RUN del propietario cuyos vehículos queremos listar.
     //    Descripción detallada:
@@ -119,7 +114,7 @@ public class VehiculoRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: listAll
+    // == Método: listAll
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción detallada:
@@ -150,14 +145,14 @@ public class VehiculoRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: update
+    // == Método: update
     //    Parámetros:
     //      - v (Vehiculo): entidad con la PK (patente) existente y los
     //        nuevos valores para actualizar.
     //    Descripción detallada:
     //      - Actualiza color y modelo del vehículo con patente = v.patente.
     //      - Si v.runDueno != null, también actualiza el RUN del dueño.
-    //        (Si se quiere quitar el dueño —poner NULL—, este metodo no
+    //        (Si se quiere quitar el dueño —poner NULL—, este método no
     //         lo hace porque solo escribe cuando hay valor; se necesitaría
     //         una variante que acepte explícitamente null).
     //    Retorno:
@@ -176,7 +171,7 @@ public class VehiculoRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: delete
+    // == Método: delete
     //    Parámetros:
     //      - patente (String): clave primaria del vehículo a eliminar.
     //    Descripción detallada:
@@ -194,7 +189,7 @@ public class VehiculoRepository {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: count
+    // == Método: count
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción detallada:

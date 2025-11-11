@@ -30,17 +30,6 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.VH> {
     public interface OnClick { void onClick(Vehiculo v); }
 
     // ------------------------------------------------------------------
-    // == Interface: OnLong
-    //    Rol:
-    //      - Contrato de callback para “long press” (pulsación larga).
-    //    Nota:
-    //      - Esta interfaz no está conectada en este adapter (no hay
-    //        campo ni listener que la use). Se deja disponible para
-    //        extensiones futuras sin romper firmas públicas.
-    // ------------------------------------------------------------------
-    public interface OnLong { void onLong(Vehiculo v); }
-
-    // ------------------------------------------------------------------
     // == Atributo: data
     //    Tipo: List<Vehiculo>
     //    Rol : Fuente de datos actual a renderizar en el RecyclerView.
@@ -131,7 +120,6 @@ public class VehiculoAdapter extends RecyclerView.Adapter<VehiculoAdapter.VH> {
     public void onBindViewHolder(@NonNull VH h, int pos) {
         Vehiculo v = data.get(pos);
         h.linea.setText(v.toString());
-        h.itemView.setOnClickListener(w -> { if (onClick != null) onClick.onClick(v); });
     }
 
     // ------------------------------------------------------------------

@@ -24,7 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 public class ManageClientesActivity extends AppCompatActivity {
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado previamente guardado
     //        de la Activity (si el sistema la recreó tras destrucción).

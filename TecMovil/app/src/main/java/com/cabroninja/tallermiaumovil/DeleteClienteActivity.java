@@ -24,22 +24,22 @@ import androidx.appcompat.widget.Toolbar;
 public class DeleteClienteActivity extends AppCompatActivity {
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado previo si el sistema
     //        recrea la Activity (no utilizado en este flujo).
     //    Descripción:
     //      - Infla el layout activity_delete_cliente.
-//      - Configura el Toolbar con título y botón de retroceso.
-//      - Obtiene referencias a EditText (etRun) y Button (btnEliminar).
-//      - Crea un PersonaRepository para realizar el borrado.
-//      - En el click de "Eliminar":
-//           * Intenta parsear el RUN ingresado (NumberFormatException si falla).
-//           * Llama a repo.deleteByRun(run) y muestra un Toast según
-//             el número de filas afectadas.
-//           * En caso de éxito (>0), cierra la pantalla con finish().
-//    Retorno:
-//      - void (callback del ciclo de vida).
+    //      - Configura el Toolbar con título y botón de retroceso.
+    //      - Obtiene referencias a EditText (etRun) y Button (btnEliminar).
+    //      - Crea un PersonaRepository para realizar el borrado.
+    //      - En el click de "Eliminar":
+    //           * Intenta parsear el RUN ingresado (NumberFormatException si falla).
+    //           * Llama a repo.deleteByRun(run) y muestra un Toast según
+    //             el número de filas afectadas.
+    //           * En caso de éxito (>0), cierra la pantalla con finish().
+    //    Retorno:
+    //      - void (callback del ciclo de vida).
     // ------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {

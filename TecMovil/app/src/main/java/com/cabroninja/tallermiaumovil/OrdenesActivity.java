@@ -38,8 +38,6 @@ public class OrdenesActivity extends AppCompatActivity {
     // == Atributo: adapter
     //    Tipo: OrdenAdapter
     //    Rol : Puente entre List<OrdenTrabajo> y el RecyclerView.
-    //    Nota: Se instancia con callback de long-press = null (no hay
-    //          acciones de pulsación larga en esta pantalla por ahora).
     // ------------------------------------------------------------------
     private OrdenAdapter adapter;
 
@@ -53,7 +51,7 @@ public class OrdenesActivity extends AppCompatActivity {
     private String patente = null;
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    Parámetros:
     //      - savedInstanceState (Bundle): estado previo si el sistema
     //        recrea la Activity (no usado explícitamente aquí).
@@ -62,8 +60,6 @@ public class OrdenesActivity extends AppCompatActivity {
     //      - Configura Toolbar con título y botón de retroceso.
     //      - Inicializa repositorio y lee el filtro "patente" del Intent.
     //      - Configura RecyclerView con LinearLayoutManager y OrdenAdapter.
-    //      - (Nota) El id del RecyclerView es recyclerClientes por herencia
-    //        del layout; idealmente estandarizar a recyclerOrdenes en XML.
     //    Retorno:
     //      - void (callback del ciclo de vida).
     // ------------------------------------------------------------------
@@ -86,16 +82,15 @@ public class OrdenesActivity extends AppCompatActivity {
         patente = getIntent().getStringExtra("patente");
 
         // Lista y adaptador
-        RecyclerView rv = findViewById(R.id.recyclerClientes); // ← id heredado; sugerencia: renombrar en XML a recyclerOrdenes
+        RecyclerView rv = findViewById(R.id.recyclerClientes);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-        // No se usa acción de long-press en esta pantalla (callback null)
-        adapter = new OrdenAdapter(null);
+        adapter = new OrdenAdapter();
         rv.setAdapter(adapter);
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: onResume
+    // == Método: onResume
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción:
@@ -111,7 +106,7 @@ public class OrdenesActivity extends AppCompatActivity {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: cargar
+    // == Método: cargar
     //    Parámetros:
     //      - (sin parámetros)
     //    Descripción:

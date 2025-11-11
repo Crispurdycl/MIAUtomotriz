@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
 
     // ------------------------------------------------------------------
-    // == Metodo: onCreate
+    // == Método: onCreate
     //    - Parámetros:
     //        * savedInstanceState (Bundle): Estado previo de la Activity
     //          si fue destruida y recreada por el sistema. Suele ser null
@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
     //           significa que hay sesión activa → navega a MainActivity y
     //           cierra esta pantalla para evitar volver al login.
     //        4) Inicializa referencias a las vistas (EditTexts y Button).
-    //        5) Conecta el botón “Iniciar sesión” con el metodo doLogin().
+    //        5) Conecta el botón “Iniciar sesión” con el método doLogin().
     //    - Retorno:
     //        * void (callback de ciclo de vida; no retorna valor).
     // ------------------------------------------------------------------
@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     // ------------------------------------------------------------------
-    // == Metodo: doLogin
+    // == Método: doLogin
     //    - Parámetros:
     //        * (sin parámetros) — usa directamente los campos de UI.
     //    - Descripción detallada:
