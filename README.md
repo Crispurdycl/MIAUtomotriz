@@ -9,7 +9,7 @@
   - Cristian Cárdenas
   - Nelson Espinoza
   - Franco Garrido
-  - Matias Guzman
+  - Matías Guzmán
 
 ---
 

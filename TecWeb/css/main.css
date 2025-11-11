@@ -14,7 +14,8 @@ requisitos a considerar:
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* padding + border dentro del ancho total */
+    box-sizing:
+    border-box; /* padding + border dentro del ancho total */
 }
 
 html, body {
@@ -25,7 +26,7 @@ html, body {
 body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     color: #14213D;           /* Texto principal: azul oscuro */
-    background-color: #E5E5E5; /* Fondo general: gris claro */
+    background-color: #E5E5E5; /* Fondo general: blanco */
     line-height: 1.5;         /* Espacio entre líneas para legibilidad */
 }
 

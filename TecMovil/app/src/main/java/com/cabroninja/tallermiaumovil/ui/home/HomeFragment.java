@@ -10,12 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.cabroninja.tallermiaumovil.databinding.FragmentHomeBinding;
+import com.cabroninja.tallermiaumovil.databinding.FragmentHomeBinding;// == Clase: HomeFragment
+// == Tipo: class — hereda de Fragment
+// == Rol: Componente de interfaz de usuario.
 
-public class HomeFragment extends Fragment {
+
+public class HomeFragment extends Fragment {// == Campo: binding (FragmentHomeBinding) — atributo de la clase.
+
 
     private FragmentHomeBinding binding;
 
+// == Método: onCreateView
+// Parámetros: inflater (LayoutInflater), container (ViewGroup), savedInstanceState (Bundle)
+// Descripción: Callback del ciclo de vida de Android.
+// Retorna: View
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -30,6 +38,10 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
+// == Método: onDestroyView
+// Parámetros: (sin parámetros)
+// Descripción: Realiza la operación asociada al método.
+// Retorna: void
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
