@@ -114,10 +114,6 @@ public class EditClienteActivity extends AppCompatActivity {
         //      - Si filas afectadas > 0, cierra la Activity con finish().
         //    Retorno:
         //      - (no aplica; acción de UI con efectos en la BD y en la pantalla).
-        //    Nota:
-        //      - El update envía también password="123456". Si deseas
-        //        preservar la contraseña anterior, primero lee la Persona
-        //        original y reusa p.password antes de invocar update().
         // ------------------------------------------------------------------
         btnGuardar.setOnClickListener(v -> {
             try {
